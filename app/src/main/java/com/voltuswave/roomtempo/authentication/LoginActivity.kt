@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        Fabric.with(this, Crashlytics())
+      //  Fabric.with(this, Crashlytics())
 
         handler.postDelayed({
             if (SharedPreferenceService.getValue(applicationContext, StringConstants.key_token) != null) {
