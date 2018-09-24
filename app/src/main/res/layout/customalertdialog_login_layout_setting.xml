@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbarsettingdialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:selectableItemBackgroundBorderless"
+    tools:targetApi="lollipop">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:weightSum="1"
+             android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:id="@+id/edittextUrl"
+                android:backgroundTint="#A9A9A9"
+                android:textStyle="bold"
+                android:hint="Enter Url"
+                android:layout_height="wrap_content" />
+             <Spinner
+                 android:id="@+id/selectUrl"
+                 android:layout_width="0dp"
+                 android:gravity="center"
+                 android:layout_weight="0.2"
+                 android:layout_height="30dp"
+                 android:padding="5dp"
+                 android:visibility="visible"
+                 android:textAlignment="center"
+                 android:background="@drawable/cornered_rectangle"
+                 android:ellipsize="marquee"
+                 android:singleLine="true"
+                 android:spinnerMode="dropdown" />
+
+         </LinearLayout>
+
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnresetbuttonpopup"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/white_ripplebutton"
+                android:gravity="center"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnsearchbuttonpopup"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/authsigninbtn"
+                android:gravity="center"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</FrameLayout>
+
+

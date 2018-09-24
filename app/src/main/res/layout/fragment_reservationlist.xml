@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- C A R D   V I E W -->
+<android.support.design.card.MaterialCardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="5dp">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:baselineAligned="false"
+    android:padding="@dimen/labels_text_size"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:layout_gravity="start"
+        android:gravity="start"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/GuestFullNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GuestName"
+            android:textColor="@color/textColorPrimary"
+            android:layout_margin="@dimen/text_margin"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size"
+            android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+        <TextView
+            android:id="@+id/GuestFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColorSecondary"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/text_size"
+            android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <LinearLayout
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/UnitTypeNameLabel"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Unit Type"
+                    android:textStyle="bold"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/UnitTypeName"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/StatusNameLabel"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:text="Status"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/StatusName"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:padding="@dimen/text_size_small"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SourceNameLabel"
+                android:layout_width="wrap_content"
+                android:textColor="@color/textColorPrimary"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="Source"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <TextView
+                android:id="@+id/SourceName"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:layout_gravity="start"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/StartDateLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColorPrimary"
+                    android:text="Start Date"
+                    android:textStyle="bold"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/StartDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/EndDateLabel"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_height="wrap_content"
+                    android:text="End Date"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/EndDate"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/NightsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="Nights"
+                android:textColor="@color/textColorPrimary"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+        <TextView
+            android:id="@+id/Nights"
+            android:layout_width="wrap_content"
+            android:textColor="@color/textColorSecondary"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/text_size"
+            android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/person_count"
+            android:orientation="horizontal"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/NumberOfPersonsLabel"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Persons"
+                    android:textStyle="bold"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/NumberOfPersons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/member_count"
+            android:orientation="horizontal"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/NumberOfAdultsLabel"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adults"
+                    android:textStyle="bold"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/NumberOfAdults"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/NumberOfChildrenLabel"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Children"
+                    android:textStyle="bold"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/NumberOfChildren"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.design.card.MaterialCardView
+                android:id="@+id/checkIn_btn"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/check_in_icon"
+                    android:text="@string/check_in"
+                    android:layout_margin="@dimen/text_size_small"
+                    android:contentDescription="@string/check_in" />
+
+            </android.support.design.card.MaterialCardView>
+
+            <android.support.design.card.MaterialCardView
+                android:id="@+id/checkOut_btn"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/check_out_icon"
+                    android:text="@string/check_out"
+                    android:layout_margin="@dimen/text_size_small"
+                    android:contentDescription="@string/check_out" />
+
+            </android.support.design.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</android.support.design.card.MaterialCardView>

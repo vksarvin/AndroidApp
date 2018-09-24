@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- C A R D   V I E W -->
+<android.support.v7.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="5dp">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:padding="@dimen/text_size"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/unitTypeNameLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Unit Type"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/textColorPrimary"
+                android:layout_margin="@dimen/text_margin"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <TextView
+                android:id="@+id/unitTypeName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:padding="@dimen/text_margin"
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAppearance="?android:attr/textAppearanceListItem" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="@dimen/text_size"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/unitNameLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Unit Name"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:textColor="@color/textColorPrimary"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/propertyNickName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                <TextView
+                    android:id="@+id/unitName"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="@dimen/text_margin"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/AssignedUsersLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="AssignedUsers"
+                android:textColor="@color/textColorPrimary"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_assignedUser"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"/>
+
+            <android.support.design.card.MaterialCardView
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:visibility="invisible"
+                android:id="@+id/houseKeepingInCharge"
+                android:layout_margin="@dimen/text_margin"
+                app:cardBackgroundColor="#95D171"
+                app:cardCornerRadius="@dimen/text_margin"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_housekeepingInChargeProfileImage"
+                        android:src="@drawable/ic_account_circle_black_24dp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_housekeepingInChargeInitials"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/text_size"
+                        android:layout_height="wrap_content"
+                        android:text=""/>
+
+                </LinearLayout>
+            </android.support.design.card.MaterialCardView>
+
+            <ImageView
+                android:id="@+id/add_assigned_user"
+                android:layout_weight="0.3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:src="@drawable/ic_person_add_black_24dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="@dimen/text_margin"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/houseKeepingLabel"
+                android:layout_width="0dp"
+                android:textColor="@color/textColorPrimary"
+                android:layout_height="wrap_content"
+                android:text="House Keeping"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:weightSum="3"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/statusNameDirty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/text_margin"
+                        android:drawableTop="@drawable/dirty"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/textColorSecondary"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+                    <TextView
+                        android:id="@+id/statusNameClean"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:padding="@dimen/text_margin"
+                        android:drawableTop="@drawable/clean"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+                    <TextView
+                        android:id="@+id/statusNameInspected"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/text_margin"
+                        android:drawableTop="@drawable/inspected"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="@dimen/text_margin"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/priorResGuestNameLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="PRIOR RES"
+                android:layout_weight="1"
+                android:textColor="@color/textColorPrimary"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <LinearLayout
+                android:id="@+id/priorResDetail"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/priorResGuestName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/textColorSecondary"
+                    android:padding="@dimen/text_margin"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/priorResCheckInDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                    <TextView
+                        android:id="@+id/priorResCheckOutDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/textColorSecondary"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/priorResGuests"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="@dimen/text_size"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/priorUnitStatusLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="PRIOR Unit Status"
+                android:textColor="@color/textColorPrimary"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <TextView
+                android:id="@+id/priorUnitStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textColor="@color/textColorSecondary"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="@dimen/text_margin"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/nextResGuestNameLabel"
+                android:layout_width="0dp"
+                android:textColor="@color/textColorPrimary"
+                android:layout_height="wrap_content"
+                android:text="NEXT RES"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <LinearLayout
+                android:id="@+id/nextResDetail"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/nextResGuestName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/textColorSecondary"
+                    android:padding="@dimen/text_margin"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/nextResCheckInDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/textColorSecondary"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                    <TextView
+                        android:id="@+id/nextResCheckOutDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/nextResGuests"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/textColorSecondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="@dimen/text_size"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/nextUnitStatusLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="NEXT Unit Status"
+                android:textColor="@color/textColorPrimary"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <TextView
+                android:id="@+id/nextUnitStatus"
+                android:textColor="@color/textColorSecondary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

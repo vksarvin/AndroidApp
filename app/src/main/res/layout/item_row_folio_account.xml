@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="@dimen/labels_text_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/folioitemname_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Folio Item Name"
+                android:textColor="@color/textColorPrimary"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <TextView
+                android:id="@+id/star_label"
+                android:textColor="@color/textColorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="*"
+                android:paddingStart="@dimen/text_margin"
+                android:paddingEnd="@dimen/text_margin"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/itemqty"
+                android:textColor="@color/textColorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:layout_gravity="center"
+                android:gravity="end"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <TextView
+                android:id="@+id/nights_label"
+                android:textColor="@color/textColorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nights"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="end"
+                android:textSize="@dimen/text_size"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            <TextView
+                android:id="@+id/perNight"
+                android:textColor="@color/textColorSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$359 per night"
+                android:layout_gravity="center"
+                android:gravity="end"
+                android:textSize="@dimen/text_size_small"
+                android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/charges"
+            android:layout_weight="0.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$359 "
+            android:layout_gravity="center"
+            android:textColor="@color/textColorPrimary"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size"
+            android:textAppearance="?android:attr/textAppearanceListItem"/>
+    </LinearLayout>
+
+</LinearLayout>

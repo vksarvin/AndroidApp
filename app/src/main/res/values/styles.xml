@@ -1,0 +1,99 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/popup_background</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <style name="CalenderDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="SubMenuButtonsSmall">
+        <item name="fab_shadowColor">#444</item>
+        <item name="fab_size">mini</item>
+        <item name="fab_colorNormal">#4A90E2</item>
+        <item name="fab_colorPressed">#2272CD</item>
+        <item name="fab_colorRipple">#62B2FF</item>
+    </style>
+
+    <!--<style name="Theme.Shrine.Filter">
+        <item name="android:textAppearance">@style/Widget.Shrine.TextView</item>
+    </style>
+
+    <style name="Widget.Shrine.Toolbar.Filter">
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>-->
+    <style name="PopupAnimation">
+        <item name="android:windowEnterAnimation">
+            @transition/explode
+        </item>
+        <item name="android:windowExitAnimation">
+            @android:anim/slide_out_right
+        </item>
+    </style>
+    <style name="Widget.Shrine.SectionItem" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/shrine_standard_spacing</item>
+        <item name="android:paddingBottom">@dimen/shrine_standard_spacing</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Widget.Shrine.SectionItem.Container">
+        <item name="android:layout_marginBottom">@dimen/shrine_small_spacing</item>
+        <item name="android:paddingLeft">@dimen/shrine_standard_spacing</item>
+        <item name="android:paddingRight">@dimen/shrine_standard_spacing</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Widget.Shrine.TextView" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Shrine.Filter</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="Widget.Shrine.TextView.SectionHeader">
+        <item name="android:textAppearance">@style/TextAppearance.Shrine.Filter.SubHead</item>
+    </style>
+
+    <style name="Widget.Shrine.TextView.SectionHeaderEnd">
+        <item name="android:layout_weight">0</item>
+        <item name="android:textSize">@dimen/shrine_section_header_text_size</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Filter" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Filter.SubHead" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textSize">@dimen/shrine_section_header_text_size</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
+    </style>
+
+</resources>

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto">
+
+        <ImageView
+            android:id="@+id/header_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:alpha="0.5" />
+
+        <ImageButton
+            android:id="@+id/user_profile_photo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/header_cover_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-60dp"
+            android:background="@drawable/cornered_rectangle_for_profileimg"
+            android:elevation="5dp"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_account_circle_black_24dp" />
+
+        <RelativeLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@+id/header_cover_image"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp">
+
+
+            <ImageView
+                android:id="@+id/add_photo_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@+id/user_profile_name"
+                android:src="@drawable/ic_add_a_photo_black_24dp" />
+
+            <TextView
+                android:id="@+id/user_profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:text="Profile"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/user_profile_short_bio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_profile_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:text="Profile Details"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        shimmer:duration="800">
+
+        <!-- Adding 7 rows of placeholders -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_layout"
+            android:layout_marginTop="5dp"
+            android:id="@+id/profileinformationlayout"
+            android:orientation="vertical">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#fff"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/activity_padding"
+                android:text="User id" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/userid"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:clickable="true"
+                android:focusable="true"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size"
+                android:textColorHint="#000000"
+                android:padding="@dimen/activity_padding"
+                android:hint="" />
+           </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:padding="@dimen/activity_padding"
+                    android:text="client id" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:id="@+id/clientId"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textColorHint="#000000"
+                    android:padding="@dimen/activity_padding"
+                    android:hint="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:padding="@dimen/activity_padding"
+                    android:text="client Name" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:id="@+id/clientname"
+                    android:textColorHint="#000000"
+                    android:padding="@dimen/activity_padding"
+                    android:hint="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#FFFFFF"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:padding="@dimen/activity_padding"
+                    android:text="client code" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:id="@+id/clientcode"
+                    android:background="#FFFFFF"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textSize="@dimen/text_size"
+                    android:textColorHint="#000000"
+                    android:padding="@dimen/activity_padding"
+                    android:textStyle="bold"
+                    android:hint="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#FFFFFF"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:padding="@dimen/activity_padding"
+                    android:text="Login id" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:id="@+id/loginid"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"
+                    android:textColorHint="#000000"
+                    android:padding="@dimen/activity_padding"
+                    android:hint="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:padding="@dimen/activity_padding"
+                    android:text="User FirstName" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:id="@+id/userfirstname"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textColorHint="#000000"
+                    android:padding="@dimen/activity_padding"
+                    android:hint="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/activity_padding"
+                    android:text="UserLast Name" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"
+                    android:id="@+id/userlastname"
+                    android:textColorHint="#000000"
+                    android:padding="@dimen/activity_padding"
+                    android:hint="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/activity_padding"
+                    android:text="Email" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textSize="@dimen/text_size"
+                    android:id="@+id/email"
+                    android:textStyle="bold"
+                    android:textColorHint="#000000"
+                    android:padding="@dimen/activity_padding"
+                    android:hint="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/activity_padding"
+                    android:text="User Password" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:id="@+id/userpassword"
+                    android:inputType="textPassword"
+                    android:background="#fff"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textColorHint="#000000"
+                    android:padding="@dimen/activity_padding"
+                    android:hint="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:padding="@dimen/activity_padding"
+                    android:text="Status Id" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:id="@+id/statusid"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textColorHint="#000000"
+                    android:padding="@dimen/activity_padding"
+                    android:hint="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/activity_padding"
+                    android:text="Status Name" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/statusnameuser"
+                    android:background="@drawable/cornered_rectangle_forstatus"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:padding="@dimen/activity_padding"
+                    android:hint="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:padding="@dimen/activity_padding"
+                    android:text="Is Password Expire" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:id="@+id/passwordexpire"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textColorHint="#000000"
+                    android:padding="@dimen/activity_padding"
+                    android:hint="" />
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_padding"
+                android:id="@+id/btnupdate"
+                android:background="@drawable/cornered_rectangle_forstatus"
+                android:clickable="true"
+                android:focusable="true"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:text="Update"
+                android:textSize="@dimen/text_size"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:padding="@dimen/activity_padding"
+                android:hint="" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

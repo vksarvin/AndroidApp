@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Oto Olo</string>
+
+    <!-- Strings related to login -->
+    <string name="facebooklogin">LOGIN WITH FACEBOOK</string>
+    <string name="googlelogin">GOOGLE</string>
+    <string name="phonelogin">PHONE</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">LOGIN NOW</string>
+    <string name="error_invalid_email">This User Name is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_clientId">This clientId is Invalid</string>
+    <string name="error_incorrect_clientId">This clientId is Incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="err_msg_date">Enter start and end date</string>
+    <string name="err_msg_start_date">Enter date</string>
+    <string name="prompt_assigned_user">Assigned Users</string>
+    <string name="wait_int">Internet connection is not available</string>
+    <string name="wait_wait">Wait for internet connection</string>
+    <string name="offline_mode">No internet connection</string>
+
+    <string-array name="Description">
+        <item>Reservation List</item>
+        <item>House Keeping</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="splash_loading">Loading...</string>
+    <string name="wait_refresh">REFRESH</string>
+    <string name="check_out">Check-Out</string>
+    <string name="check_in">Check-In</string>
+    <string name="title_activity_login_inside">Sign in</string>
+    <string name="title_activity_phone_inside">Phone</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+
+</resources>

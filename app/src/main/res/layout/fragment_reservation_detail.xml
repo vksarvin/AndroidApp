@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ReservationDetailFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:gravity="center"
+        android:id="@+id/linearLayout22"
+        android:measureWithLargestChild="false"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/offline_mode"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        shimmer:duration="800">
+
+        <!-- Adding 7 rows of placeholders -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+            <include layout="@layout/data_placeholder_layout" />
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/reservation_summary"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/reservation_detail"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/guest_full_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_margin="@dimen/labels_text_size"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <Spinner
+                    android:id="@+id/reservationStatus"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:textAlignment="center"
+                    android:background="@drawable/spinner_background"
+                    android:ellipsize="marquee"
+                    android:singleLine="true"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/guest_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Guests"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:layout_margin="@dimen/labels_text_size"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <TextView
+                    android:id="@+id/unittypename_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textColor="#FFFFFF"
+                    android:padding="@dimen/text_margin"
+                    android:background="@drawable/button_background"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/persons_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:textColor="@color/textColorPrimary"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                    <TextView
+                        android:id="@+id/persons_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Persons"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/propertynickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                    <TextView
+                        android:id="@+id/unitnickname"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/textColorPrimary"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:src="@drawable/ic_mail_purple_24dp"
+                    android:layout_margin="@dimen/labels_text_size"/>
+
+                <ImageView
+                    android:id="@+id/iv_call"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_call_purple_24dp"
+                    android:gravity="start"
+                    android:layout_margin="@dimen/labels_text_size"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/checkIn_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Check-In"
+                        android:textColor="@color/textColorPrimary"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                    <TextView
+                        android:id="@+id/arrival_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/nights"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColorSecondary"
+                    android:drawableTop="@drawable/ic_access_time_grey_24dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/labels_text_size"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/checkOut_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Check-Out"
+                        android:textColor="@color/textColorPrimary"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                    <TextView
+                        android:id="@+id/departure_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/folio_detail"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/folio_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FOLIO SUMMARY"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:layout_margin="@dimen/labels_text_size"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                <LinearLayout
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/balance_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Balance"
+                        android:textColor="@color/textColorPrimary"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                    <TextView
+                        android:id="@+id/balance_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                </LinearLayout>
+
+                <android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_margin="@dimen/text_margin"
+                    app:cardCornerRadius="@dimen/text_margin"
+                    app:cardUseCompatPadding="true">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_foliopaymentsummary"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"/>
+
+                </android.support.design.card.MaterialCardView>
+
+                <LinearLayout
+                    android:weightSum="2"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/tax_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tax"
+                        android:textColor="@color/textColorPrimary"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/tax_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"/>
+
+                <LinearLayout
+                    android:weightSum="2"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/total_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total"
+                        android:textColor="@color/textColorPrimary"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/total_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:textColor="@color/textColorSecondary"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"/>
+
+                <LinearLayout
+                    android:weightSum="2"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/payments_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payments"
+                        android:textColor="@color/textColorPrimary"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/payments_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/textColorSecondary"
+                        android:gravity="end"
+                        android:layout_margin="@dimen/labels_text_size"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size"
+                        android:textAppearance="?android:attr/textAppearanceListItem"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
