@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         /**
          * Log User Credentials to Crashlytics
          */
-        LogUser.logUser(applicationContext)
+       // LogUser.logUser(applicationContext)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

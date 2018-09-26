@@ -45,9 +45,20 @@
     <string name="check_in">Check-In</string>
     <string name="title_activity_login_inside">Sign in</string>
     <string name="title_activity_phone_inside">Phone</string>
+    <string name="title_activity_otp_pin">OTP</string>
+    <string name="title_activity_otp_verify">OTP  Verifying..</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="pin_code_forgot_text">Forgot?</string>
+    <string name="pin_code_step_disable">Disable %d-digit Pincode</string>
+    <string name="pin_code_step_create">Create a %d-digit Pincode</string>
+    <string name="pin_code_step_change">Enter your current %d-digit Pincode</string>
+    <string name="pin_code_step_unlock">Enter your %d-digit Pincode</string>
+    <string name="pin_code_step_enable_confirm">Confirm your %d-digit Pincode</string>
 
+    <string name="pin_code_fingerprint_text">Fingerprint</string>
+    <string name="pin_code_fingerprint_success">Fingerprint recognized</string>
+    <string name="pin_code_fingerprint_not_recognized">Fingerprint not recognized. Try again</string>
 </resources>

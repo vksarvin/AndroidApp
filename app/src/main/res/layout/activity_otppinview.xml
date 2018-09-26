@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/appbgimage">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="23:17"
+        android:id="@+id/time"
+        android:textSize="50sp"
+        android:layout_marginTop="64dp"
+       android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:maxLength="6"
+        android:inputType="number"
+        android:backgroundTint="@color/loginpageiconcolor"
+        android:textColor="@color/loginpageiconcolor"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/editTextotp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Enter Otp"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/statusview"
+        android:layout_below="@+id/time"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/transparent"
+        />
+
+ <Button
+     android:layout_width="match_parent"
+     android:text="Verify"
+     android:layout_marginLeft="30dp"
+     android:layout_marginRight="30dp"
+     android:textSize="20dp"
+     android:textColor="#ffffff"
+     android:id="@+id/btnVerify"
+     android:background="@drawable/roundtransparent"
+     android:textAllCaps="false"
+     android:layout_height="wrap_content" />
+
+
+</LinearLayout>

@@ -13,8 +13,8 @@ object LogUser {
     fun logUser(context: Context) {
 
         // You can call any combination of these three methods
-        Crashlytics.setUserIdentifier(SharedPreferenceService.getValue(context, StringConstants.key_token))
-        Crashlytics.setUserEmail(SharedPreferenceService.getValue(context, StringConstants.key_email))
-        Crashlytics.setUserName(SharedPreferenceService.getValue(context, StringConstants.key_userFirstName))
+//        Crashlytics.setUserIdentifier(SharedPreferenceService.getValue(context, StringConstants.key_token))
+//        Crashlytics.setUserEmail(SharedPreferenceService.getValue(context, StringConstants.key_email))
+//        Crashlytics.setUserName(SharedPreferenceService.getValue(context, StringConstants.key_userFirstName))
     }
 }

@@ -17,7 +17,7 @@ android {
         enabled = true
     }
     defaultConfig {
-        applicationId "com.voltuswave.otoolo"
+        applicationId "com.voltuswave.roomtempo"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 2
@@ -85,4 +85,10 @@ dependencies {
 
     /*<--Shimmer Effect-->*/
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+   /*<--    for firebase service --->*/
+    implementation 'com.google.firebase:firebase-core:11.8.0'
+    implementation 'com.google.firebase:firebase-auth:11.8.0'
+    /*<--    for progress dialog --->*/
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
 }
+apply plugin: 'com.google.gms.google-services'

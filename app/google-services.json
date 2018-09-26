@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "363833492092",
+    "firebase_url": "https://oto-olo.firebaseio.com",
+    "project_id": "oto-olo",
+    "storage_bucket": "oto-olo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363833492092:android:2382bc3946769640",
+        "android_client_info": {
+          "package_name": "com.voltuswave.roomtempo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363833492092-f8en29k89rr454gicoi9fq55tc9b75u9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.voltuswave.roomtempo",
+            "certificate_hash": "e43ce41dda2a8ca5772027f5f5fc42da79644113"
+          }
+        },
+        {
+          "client_id": "363833492092-ttvmqg3mff1arv4p8qg740unphh5vjlm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKXO3UeaoZWgkqM8kBjCGnSrqVioOzrr0"
+        },
+        {
+          "current_key": "AIzaSyAKXO3UeaoZWgkqM8kBjCGnSrqVioOzrr0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363833492092-ttvmqg3mff1arv4p8qg740unphh5vjlm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

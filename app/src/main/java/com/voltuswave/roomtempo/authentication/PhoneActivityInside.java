@@ -3,6 +3,7 @@ package com.voltuswave.roomtempo.authentication;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
 import android.content.Intent;
@@ -16,25 +17,33 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
 import com.voltuswave.roomtempo.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import dmax.dialog.SpotsDialog;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -69,6 +78,11 @@ public class PhoneActivityInside extends AppCompatActivity implements LoaderCall
     private View mLoginFormView;
     Button phoneverifyButton;
     Button btnClear;
+    FirebaseAuth auth;
+    PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback;
+    private String verificationCode;
+    private int OTP_REQUEST_CODE=1;
+    android.app.AlertDialog alertDialogForOtp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,9 +146,12 @@ public class PhoneActivityInside extends AppCompatActivity implements LoaderCall
 //                return false;
 //            }
 //        });
+
+        StartFirebaseLogin();
         phoneverifyButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 attemptLogin();
             }
         });
@@ -200,6 +217,7 @@ public class PhoneActivityInside extends AppCompatActivity implements LoaderCall
 
         // Store values at the time of the login attempt.
         String phone = mPhone.getText().toString();
+        String phoneNumber="+91"+phone;
        // String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
@@ -210,6 +228,12 @@ public class PhoneActivityInside extends AppCompatActivity implements LoaderCall
            mName.setVisibility(View.VISIBLE);
             phoneverifyButton.setText("REGISTER");
             phoneverifyButton.setAlpha(1F);
+            PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                    "+91"+phone,                     // Phone number to verify
+                    60,                           // Timeout duration
+                    TimeUnit.SECONDS,                // Unit of timeout
+                    this,        // Activity (for callback binding)
+                    mCallback);                      // OnVerificationStateChangedCallbacks
 
         }
 
@@ -371,6 +395,62 @@ public class PhoneActivityInside extends AppCompatActivity implements LoaderCall
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in, R.anim.nothing);
         return true;
+    }
+    private void StartFirebaseLogin() {
+        auth = FirebaseAuth.getInstance();
+        mCallback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+            @Override
+            public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+                Toast.makeText(PhoneActivityInside.this,"verification completed",Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onVerificationFailed(FirebaseException e) {
+                Toast.makeText(PhoneActivityInside.this,"verification failed",Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                super.onCodeSent(s, forceResendingToken);
+                verificationCode = s;
+                Toast.makeText(PhoneActivityInside.this,"Code sent",Toast.LENGTH_SHORT).show();
+                Intent intent =new Intent(PhoneActivityInside.this, OtpPinViewActivity.class);
+                startActivityForResult(intent,OTP_REQUEST_CODE);
+
+            }
+        };
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == OTP_REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
+                Log.e("backtopin", "yess");
+                alertDialogForOtp=  new SpotsDialog.Builder().setContext(this).setTheme(R.style.Customprogressdialog).build();
+                alertDialogForOtp.show();
+                String result=data.getStringExtra("otp");
+                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCode, result);
+                SigninWithPhone(credential);
+            }
+        }else {
+
+        }
+
+    }
+    private void SigninWithPhone(PhoneAuthCredential credential) {
+        auth.signInWithCredential(credential)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            alertDialogForOtp.dismiss();
+                            startActivity(new Intent(PhoneActivityInside.this,LoginActivity.class));
+                            finish();
+                        } else {
+                            alertDialogForOtp.dismiss();
+                            Toast.makeText(PhoneActivityInside.this,"Incorrect OTP",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }
 
