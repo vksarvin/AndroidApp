@@ -23,6 +23,7 @@ import com.google.gson.reflect.TypeToken
 import com.voltuswave.roomtempo.R
 import com.voltuswave.roomtempo.ZoomImage.TouchImageView
 import com.voltuswave.roomtempo.models.ProfileModel
+import com.voltuswave.roomtempo.services.sharepreferencesServices
 import com.voltuswave.roomtempo.viewModels.ProfileDetailsViewModel
 import org.json.JSONArray
 import org.json.JSONObject
@@ -55,7 +56,10 @@ class ProfileFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_profile, container, false)
+
+      var phoneNumber = sharepreferencesServices.getValueFromPreferences(activity,"User_PhoneNumber");
         edittextUserId=view.findViewById(R.id.userid)
+        edittextUserId.setText(phoneNumber)
         edittextClientId=view.findViewById(R.id.clientId)
         edittextClientName=view.findViewById(R.id.clientname)
         edittextClientCode=view.findViewById(R.id.clientcode)
@@ -83,6 +87,7 @@ class ProfileFragment : Fragment() {
         customAlertDialog.isFocusable = true
         customAlertDialog.animationStyle = R.style.PopupAnimation
         customAlertDialog.isOutsideTouchable = true
+
         imageUpdateButton.setOnClickListener{
             customAlertDialog.showAsDropDown(it)
         }
@@ -105,39 +110,38 @@ class ProfileFragment : Fragment() {
         profileImageBackground.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.imageloginpage, 100, 100));
         mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container)
         profileInformationLinearLayout = view.findViewById(R.id.profileinformationlayout)
-        profileInformationLinearLayout!!.visibility=View.GONE
+        //profileInformationLinearLayout!!.visibility=View.GONE
         profileDetailsDataViewModel=ViewModelProviders.of(this).get(ProfileDetailsViewModel::class.java)
         if (isConnected(context)){
-            profileDetailsDataViewModel!!.requestprofileDetailsFromModel("GetUserProfile")
-            profileDetailsDataViewModel!!.getprofileDetailsList.observe(activity!!, Observer { t: JSONArray?->
-                Log.e("ProfileFragment","ProfileResponse : " + t.toString())
-                if (t!=null && t.length()>0){
-                    mShimmerViewContainer!!.stopShimmerAnimation()
-                    mShimmerViewContainer!!.visibility = View.GONE
-                    profileInformationLinearLayout!!.visibility=View.VISIBLE
-                    val profileJsonArray=JSONArray(t[0].toString())
-                    Log.e("ProfileFragment", "ProfileResponse : $profileJsonArray")
-                    val gson = Gson()
-                    for (index in 0 until profileJsonArray.length()) {
-                        val jsonObject=profileJsonArray[index] as JSONObject
-                        val profileArrayModelObject: ProfileModel = gson.fromJson(jsonObject.toString(), object : TypeToken<ProfileModel>() {}.type)
-                        textviewProfileTitle.text = profileArrayModelObject.userFirstName
-                        edittextUserId.setText("${profileArrayModelObject.userId}")
-                        edittextClientId.setText("${profileArrayModelObject.clientId}")
-                        edittextClientName.setText(profileArrayModelObject.clientName)
-                        edittextClientCode.setText(profileArrayModelObject.clientCode)
-                        edittextLoginId.setText(profileArrayModelObject.loginId)
-                        edittextUserFirstName.setText(profileArrayModelObject.userFirstName)
-                        edittextEmail.setText(profileArrayModelObject.email)
-                        edittextUserPassword.setText(profileArrayModelObject.userPassword)
-                        edittextStatusId.setText("${profileArrayModelObject.statusId}")
-                        edittextStatusName.setText(profileArrayModelObject.statusName)
-                        textviewProfileEmail.text = profileArrayModelObject.email
-                    }
-                } else {
-                    Toast.makeText(activity!!,"Empty List", Toast.LENGTH_SHORT).show()
-                }
-            })
+         //   profileDetailsDataViewModel!!.requestprofileDetailsFromModel("GetUserProfile")
+//            profileDetailsDataViewModel!!.getprofileDetailsList.observe(activity!!, Observer { t: JSONArray?->
+//                Log.e("ProfileFragment","ProfileResponse : " + t.toString())
+//                if (t!=null && t.length()>0){
+//                    mShimmerViewContainer!!.stopShimmerAnimation()
+//                    mShimmerViewContainer!!.visibility = View.GONE
+//                    profileInformationLinearLayout!!.visibility=View.VISIBLE
+//                    val profileJsonArray=JSONArray(t[0].toString())
+//                    Log.e("ProfileFragment", "ProfileResponse : $profileJsonArray")
+//                    val gson = Gson()
+//                    for (index in 0 until profileJsonArray.length()) {
+//                        val jsonObject=profileJsonArray[index] as JSONObject
+//                        val profileArrayModelObject: ProfileModel = gson.fromJson(jsonObject.toString(), object : TypeToken<ProfileModel>() {}.type)
+//                        textviewProfileTitle.text = profileArrayModelObject.userFirstName
+//                        edittextClientId.setText("${profileArrayModelObject.clientId}")
+//                        edittextClientName.setText(profileArrayModelObject.clientName)
+//                        edittextClientCode.setText(profileArrayModelObject.clientCode)
+//                        edittextLoginId.setText(profileArrayModelObject.loginId)
+//                        edittextUserFirstName.setText(profileArrayModelObject.userFirstName)
+//                        edittextEmail.setText(profileArrayModelObject.email)
+//                        edittextUserPassword.setText(profileArrayModelObject.userPassword)
+//                        edittextStatusId.setText("${profileArrayModelObject.statusId}")
+//                        edittextStatusName.setText(profileArrayModelObject.statusName)
+//                        textviewProfileEmail.text = profileArrayModelObject.email
+//                    }
+//                } else {
+//                    Toast.makeText(activity!!,"Empty List", Toast.LENGTH_SHORT).show()
+//                }
+//            })
 
 
         }else{
@@ -191,12 +195,12 @@ class ProfileFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        mShimmerViewContainer!!.startShimmerAnimation()
+        //mShimmerViewContainer!!.startShimmerAnimation()
     }
 
     override fun onPause() {
         super.onPause()
-        mShimmerViewContainer!!.stopShimmerAnimation()
+       // mShimmerViewContainer!!.stopShimmerAnimation()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

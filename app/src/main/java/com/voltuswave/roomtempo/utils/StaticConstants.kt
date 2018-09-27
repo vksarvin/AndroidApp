@@ -35,4 +35,5 @@ class StaticConstants {
         val TYPEFACE_FONT_ROBOTO_BOLD = "fonts/Roboto-Bold.ttf"
         val TYPEFACE_FONT_ROBOTO_LIGHT = "fonts/Roboto-Light.ttf"
     }
+
 }

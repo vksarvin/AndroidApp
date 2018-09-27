@@ -45,12 +45,27 @@ class MyHomeMenuRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = mValues[position]
         holder.contentCardView.text = item
-        if(item == "Reservation List"){
+        if(position==0){
             holder.contentCardView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.res_icon,0,0)
             holder.homeCardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.reservationList))
-        }else{
+        }else if (position==1){
             holder.contentCardView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.hk_icon,0,0)
             holder.homeCardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.houseKeeping))
+        }else if (position==2){
+            holder.contentCardView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.hk_icon,0,0)
+            holder.homeCardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.signinbtnbgcolor))
+        }
+        else if (position==3){
+            holder.contentCardView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.hk_icon,0,0)
+            holder.homeCardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.facebooklogin_bg))
+        }
+        else if (position==4){
+            holder.contentCardView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.hk_icon,0,0)
+            holder.homeCardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.light_blue_500))
+        }
+        else if (position==5){
+            holder.contentCardView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.hk_icon,0,0)
+            holder.homeCardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.blue_gray))
         }
 
         with(holder.mView) {

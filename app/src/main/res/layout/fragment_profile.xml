@@ -74,6 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
+        android:visibility="gone"
         android:orientation="vertical"
         shimmer:duration="800">
 
@@ -115,7 +116,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="@dimen/activity_padding"
-                android:text="User id" />
+                android:text="Mobile" />
 
             <EditText
                 android:layout_width="0dp"

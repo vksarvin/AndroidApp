@@ -37,7 +37,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.voltuswave.roomtempo.MainActivity;
 import com.voltuswave.roomtempo.R;
+import com.voltuswave.roomtempo.services.SharedPreferenceService;
+import com.voltuswave.roomtempo.services.sharepreferencesServices;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,6 +86,7 @@ public class PhoneActivityInside extends AppCompatActivity implements LoaderCall
     private String verificationCode;
     private int OTP_REQUEST_CODE=1;
     android.app.AlertDialog alertDialogForOtp;
+    String phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -216,7 +220,7 @@ public class PhoneActivityInside extends AppCompatActivity implements LoaderCall
         mName.setVisibility(View.GONE);
 
         // Store values at the time of the login attempt.
-        String phone = mPhone.getText().toString();
+         phone = mPhone.getText().toString();
         String phoneNumber="+91"+phone;
        // String password = mPasswordView.getText().toString();
 
@@ -443,7 +447,8 @@ public class PhoneActivityInside extends AppCompatActivity implements LoaderCall
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             alertDialogForOtp.dismiss();
-                            startActivity(new Intent(PhoneActivityInside.this,LoginActivity.class));
+                            sharepreferencesServices.storeValueInPreferences(PhoneActivityInside.this,"User_PhoneNumber",phone);
+                            startActivity(new Intent(PhoneActivityInside.this,MainActivity.class));
                             finish();
                         } else {
                             alertDialogForOtp.dismiss();

@@ -49,7 +49,11 @@ class UserHomeFragment : Fragment(){
                 }
                 val items = ArrayList<String>()
                 items.add("Reservation List")
-                items.add("House Keeping")
+                items.add("House Keeping List")
+                items.add("Car Service List")
+                items.add("Bike Service List")
+                items.add("Scooter Service List")
+                items.add("Laundry List")
                 adapter = MyHomeMenuRecyclerViewAdapter(items,context, listener)
             }
         }
@@ -88,7 +92,7 @@ class UserHomeFragment : Fragment(){
 
     override fun onStart() {
         super.onStart()
-        activity!!.title = "Host Tempo"
+        activity!!.title = "Oto Olo"
     }
 
     override fun onResume() {
